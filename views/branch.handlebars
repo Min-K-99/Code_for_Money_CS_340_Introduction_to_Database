@@ -1,44 +1,11 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> Code for Money </title>
-
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="/style.css" media="screen">
-
-    </head>
-
     <body>
-        <header>
-            <a href="https://web.engr.oregonstate.edu/~thaungt/assign1/codeformoney.html" style="text-decoration: none;"><h1 class="site-title"> Code for Money </h1></a>
-        </header>
-
-        <main class="container">
-            <article class="box">
-                <div class="content">
-                    <a href="https://web.engr.oregonstate.edu/~thaungt/assign1/codeformoney.html"><button>Home</button></a>
-                    <a href="https://web.engr.oregonstate.edu/~thaungt/assign1/branch.html"><button>Branch</button></a>
-                    <a href="https://web.engr.oregonstate.edu/~thaungt/assign1/contact.html"><button>Contact</button></a>
                     <br>
-                    <div class="search-container">
-                        <div class = "btn-group-justified btn-group-sm btn-group-vertical">
-
-                            <h1 class="site-title" style="font-size: 15px">Search</h1>  
-                            <div class = "btn-group-justified btn-group-sm btn-group-vertical">
-                                <input type="text" id="search-name" placeholder="Search Branch Name">
-                                <a href="#"><button>Search</button></a>
-                            </div>
-                        </div>
-                      </div>
-                    <br>
-                    <a href = "https://web.engr.oregonstate.edu/~thaungt/assign1/humanresources.html" style="text-decoration: none;">Human Resources</a><br>
-                    <a href = "https://web.engr.oregonstate.edu/~thaungt/assign1/marketing.html" style="text-decoration: none;">Marketing</a><br>
-                    <a href = "https://web.engr.oregonstate.edu/~thaungt/assign1/finance.html" style="text-decoration: none;">Finance</a><br>
+                    <a href = "/branch/humanresources" style="text-decoration: none;">Human Resources</a><br>
+                    <a href = "/branch/marketing" style="text-decoration: none;">Marketing</a><br>
+                    <a href = "/branch/finance" style="text-decoration: none;">Finance</a><br>
                 </div>
                 <br>
                 <table border = 1>
@@ -47,26 +14,13 @@
                       <th>branch_type</th>
                       <th>cid</th>
                     </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>Company</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Human Resources</td>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                    <td>3</td>
-                    <td>Marketing</td>
-                    <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Finance</td>
-                        <td>4</td>
-                    </tr>
+                    {{#each tableData}}
+                        <tr>
+                            <td>{{branch_id}}</td>
+                            <td>{{branch_type}}</td>
+                            <td>{{cid}}</td>
+                        </tr>
+                    {{/each}}
                 </table>
             </article>
         </main>
