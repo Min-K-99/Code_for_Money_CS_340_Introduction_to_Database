@@ -23,6 +23,53 @@ app.set('mysql', mysql);
 // app.use('/planets', require('./planets.js'));
 app.use('/', express.static('public'));
 
+app.get('/', function(req, res){
+  // This will eventually be changed to a fetch to grab data from the database instead of using dummy data
+  let data = [{'company_name': 'Code for Money', 'bid': 1, 'cid': 1}]
+  res.status(200).render("tabledata", {
+    tableData: data
+  })
+})
+
+app.get('/branch/', function(req, res){
+  // This will eventually be changed to a fetch to grab data from the database instead of using dummy data
+  let data = [{'branch_id': '1', 'branch_type': 'Company', 'cid': '1'},
+              {'branch_id': '2', 'branch_type': 'Human Resources', 'cid': '2'},
+              {'branch_id': '3', 'branch_type': 'Marketing', 'cid': '3'},
+              {'branch_id': '4', 'branch_type': 'Finance', 'cid': '4'}]
+  res.status(200).render("branch",{
+    tableData: data
+  })
+})
+
+app.get('/contact/', function(req, res){
+  let data = [{'contact_id': 1, 'fst_name': 'Alex', 'lst_name': 'Yu', 'sex': 'male', 'dob': '2001-05-29', 'phone_number': '1231231234', 'address': 'somewhere in the US', 'email': '@oregonstate.edu', 'bid': '1'}]
+  res.status(200).render("contact", {
+    tableData: data
+  })
+})
+
+app.get('/branch/humanresources/', function(req, res){
+  let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
+  res.status(200).render('humanresources',{
+    tableData: data
+  })
+})
+
+app.get('/branch/marketing/', function(req, res){
+  let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
+  res.status(200).render('marketing', {
+    tableData: data
+  })
+})
+
+app.get('/branch/finance/', function(req, res){
+  let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
+  res.status(200).render('finance', {
+    tableData: data
+  })
+})
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
