@@ -42,12 +42,14 @@ app.get('/branch/', function(req, res){
   })
 })
 
-app.get('/contact/', function(req, res){
-  let data = [{'contact_id': 1, 'fst_name': 'Alex', 'lst_name': 'Yu', 'sex': 'male', 'dob': '2001-05-29', 'phone_number': '1231231234', 'address': 'somewhere in the US', 'email': '@oregonstate.edu', 'bid': '1'}]
-  res.status(200).render("contact", {
-    tableData: data
-  })
-})
+// app.get('/contact/', function(req, res){
+//   let data = [{'contact_id': 1, 'fst_name': 'Tun', 'lst_name': 'Thaung', 'sex': 'male', 'dob': '2001-05-29', 'phone_number': '1231231234', 'address': 'somewhere in the US', 'email': '@oregonstate.edu', 'bid': '1'}]
+//   res.status(200).render("contact", {
+//     tableData: data
+//   })
+// })
+
+app.use('/contact/', require('./contact.js'));
 
 app.get('/branch/humanresources/', function(req, res){
   let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]

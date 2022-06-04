@@ -9,7 +9,7 @@
         <br><br>
 
         <table border = 1>
-            <tr>
+            <thead>
                 <th>contact_id</th>
                 <th>fst_name</th>
                 <th>lst_name</th>
@@ -19,9 +19,10 @@
                 <th>address</th>
                 <th>email</th>
                 <th>bid</th>
-            </tr>
-            <tr>
-                {{#each tableData}}
+            </thead>
+            <tbody>
+                {{#each contact}}
+                <tr>
                     <td>{{contact_id}}</td>
                     <td>{{fst_name}}</td>
                     <td>{{lst_name}}</td>
@@ -31,8 +32,9 @@
                     <td>{{address}}</td>
                     <td>{{email}}</td>
                     <td>{{bid}}</td>
+                </tr>
                 {{/each}}
-            </tr>
+            </tbody>
           </table>
   
     </body>
