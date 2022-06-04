@@ -58,19 +58,23 @@ app.get('/branch/humanresources/', function(req, res){
   })
 })
 
-app.get('/branch/marketing/', function(req, res){
-  let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
-  res.status(200).render('marketing', {
-    tableData: data
-  })
-})
+// app.get('/branch/marketing/', function(req, res){
+//   let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
+//   res.status(200).render('marketing', {
+//     tableData: data
+//   })
+// })
 
-app.get('/branch/finance/', function(req, res){
-  let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
-  res.status(200).render('finance', {
-    tableData: data
-  })
-})
+app.use('/branch/marketing/', require('./marketing.js'));
+
+// app.get('/branch/finance/', function(req, res){
+//   let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
+//   res.status(200).render('finance', {
+//     tableData: data
+//   })
+// })
+
+app.use('/branch/finance/', require('./finance.js'));
 
 app.use(function(req,res){
   res.status(404);
