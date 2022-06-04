@@ -50,13 +50,13 @@ app.get('/branch/', function(req, res){
 // })
 
 app.use('/contact/', require('./contact.js'));
-
-app.get('/branch/humanresources/', function(req, res){
-  let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
-  res.status(200).render('humanresources',{
-    tableData: data
-  })
-})
+app.use('/humanresources/', require('./hr.js'))
+// app.get('/branch/humanresources/', function(req, res){
+//   let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
+//   res.status(200).render('humanresources',{
+//     tableData: data
+//   })
+// })
 
 app.get('/branch/marketing/', function(req, res){
   let data =[{'employee_id': '1', 'fst_name': 'Alex', 'lst_name': 'Yu', 'bid': '1', 'cid': '1'}]
