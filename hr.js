@@ -20,7 +20,7 @@ module.exports = function(){
         getHR(res, mysql, context, complete);
         function complete(){
             callbackCount++;
-            res.render('contact', {"hrData": context.hr});
+            res.render('humanresources', {"tableData": context.hr});
         }
     })
     return router;
